@@ -15,7 +15,7 @@
             <p>Галерея изображений</p>
         </div>
         <div class="div-header-btn-login">   
-            <button class="btn-login">Вход</button>
+            <button class="btn-login" onclick="location.href='app/login.php'">Вход</button>
         </div>
     </header>
 
