@@ -1,4 +1,6 @@
 <?php
+    session_start();
+    $auth = $_SESSION['auth'] ?? null;
     require_once CORE .'config.php';
 ?>
 <!DOCTYPE html>
@@ -14,13 +16,24 @@
         <div class="div-header-title">   
             <p><a class="a-header-title" href="/">Галерея изображений</a></p>
         </div>
-        <div class="div-header-btn-login">   
-            <button class="btn-login" onclick="location.href='/login'">Вход</button>
+        <div class="div-header-btn-login">
+            <?php if (!$auth): ?>
+                <button class="btn-login" onclick="location.href='/login'">Вход</button>
+            <?php else: ?>
+                    <button class="btn-login" onclick="location.href='/logout'">Вход</button>
+            <?php endif; ?>   
         </div>
     </header>
 
     <main class="main">
-        <section class="show-alert">
+
+        <section class="section-load-picture">
+            <?php if ($auth): ?>
+                <button class="btn-upload" onclick="location.href='/upload'">Загрузить изображения</button>
+            <?php endif; ?>   
+        </section>
+        
+        <section class="section-show-alert">
 
         </section>
 
@@ -28,9 +41,6 @@
             <?php require_once VIEW . $view_content; ?>
         </section>
 
-        <section class="load-picture">
-
-        </section>
     </main>
 
     <footer class="footer">
