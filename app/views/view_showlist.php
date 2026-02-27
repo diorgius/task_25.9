@@ -1,7 +1,7 @@
 <?php
-require_once 'config.php';
+require_once CORE . 'config.php';
 
-$files = scandir(PICTURES);
+$files = scandir(UPLOAD);
 $files = array_filter($files, function ($file) {
     return !in_array($file, ['.', '..']);
 });
@@ -11,9 +11,9 @@ $files = array_filter($files, function ($file) {
         <?php if (!empty($files)): ?>
             <?php foreach ($files as $file): ?>
                 <div class="div-picture-container">
-                    <a href="<?php echo URL . '/file.php?name=' . $file; ?>" title="Просмотр полного изображения">
-                        <img src="<?= PICTURES . $file ?>" class="img-thumb" alt="<?php echo $file; ?>">
-                    </a>
+                    <!-- <a href="<?= URL . '/file.php?name=' . $file; ?>" title="Просмотр полного изображения"> -->
+                        <img src="<?= URL . 'uploads' . DIRECTORY_SEPARATOR .$file ?>" class="img-thumb" alt="<?php echo $file; ?>">
+                    <!-- </a> -->
                     <form method="post">
                         <button type="submit" class="btn-delete" aria-label="Close" value="<?php echo $file; ?>">Удалить</button>
                     </form>

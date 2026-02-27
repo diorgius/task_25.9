@@ -1,0 +1,29 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.main {
+    width: 59.9%;
+    background-color: #ffffff;
+    border: .02rem solid #cccccc;
+    min-height: 100%;
+    flex-grow: 1;
+}
+
+.section-main {
+    display: flex;
+    justify-content: center;
+}

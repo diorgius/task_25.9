@@ -1,4 +1,4 @@
-header {
+.header {
     background-color: #007bff;
     height: 5rem;
     width: 60%;
@@ -16,6 +16,11 @@ header {
     letter-spacing: .6rem;
     color: #ffffff;
     text-transform: uppercase;
+}
+
+.a-header-title {
+    color: #ffffff;
+    text-decoration: none;
 }
 
 .btn-login {

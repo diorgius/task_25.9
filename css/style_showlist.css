@@ -1,14 +1,3 @@
-.main {
-    width: 59.9%;
-    background-color: #ffffff;
-    border: .02rem solid #cccccc;
-}
-
-.show-picture {
-    display: flex;
-    justify-content: center;
-}
-
 .div-main-list-container {
     margin: 5rem 0 5rem 0;
     display: flex;
