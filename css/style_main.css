@@ -1,0 +1,103 @@
+.main {
+    width: 59.9%;
+    background-color: #ffffff;
+    border: .02rem solid #cccccc;
+}
+
+.show-picture {
+    display: flex;
+    justify-content: center;
+}
+
+.div-main-list-container {
+    margin: 5rem 0 5rem 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.div-picture-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    gap: .2rem;
+    width: 30%;
+    cursor: pointer;
+}
+
+.img-thumb {
+    padding: .3rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    /* border-radius: .25rem; */
+    max-width: 100%;
+    height: auto;
+}
+
+.btn-delete, .btn-load {
+    height: 2rem;
+    width: 5rem;
+    margin: .2rem;
+    background-color: #007bff;
+    border: none;
+    /* border-radius: .25rem; */
+    font-size: .8rem;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.btn-delete:hover, .btn-load:hover {
+    background-color: #2b8ef8;
+}
+
+.load-picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.form-load-picture {
+    width: 50%;
+    padding: 2rem 3rem;
+    border: .1rem solid #cccccc;
+}
+
+.form-load-picture > p {
+    font-size: .7rem;
+    color: #7c7c7c;
+}
+
+.form-load-picture > label {
+    font-size: 1rem;
+    color: #7c7c7c;
+}
+
+.input-file {
+    width: 98%;
+    padding: .4rem;
+    margin: .4rem 0 .4rem 0;
+    color: #7c7c7c;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    /* border-radius: .25rem; */
+}
+
+.input-file::file-selector-button {
+    margin-right: 1rem;
+    padding: .5rem .8rem;
+    background: #007bff;
+    font-size: .8rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    border: none;
+    /* border-radius: .25rem; */
+    cursor: pointer;
+}
+
+.input-file::file-selector-button:hover {
+    background: #2b8ef8;
+}
+
