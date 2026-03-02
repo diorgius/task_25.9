@@ -1,6 +1,11 @@
 <?php
-    require_once 'core/model.php'; 
-    require_once 'core/view.php'; 
-    require_once 'core/controller.php'; 
-    require_once 'core/route.php'; 
-    Route::start(); // запускаем маршрутиризатор
+
+namespace App;
+
+use App\core\Route;
+
+require_once 'core' . DIRECTORY_SEPARATOR . 'config.php';
+require_once dirname(__DIR__,1) . '/vendor/autoload.php';
+require_once 'data' . DIRECTORY_SEPARATOR . 'DB.php';
+
+Route::start();

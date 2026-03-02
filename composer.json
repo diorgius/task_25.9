@@ -1,0 +1,19 @@
+{
+    "name": "sf/task_25.9",
+    "type": "project",
+    "require": {
+        "gabordemooij/redbean": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app\\"
+        }
+    },
+    "authors": [
+        {
+            "name": "diorgius",
+            "email": "diorgius@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
