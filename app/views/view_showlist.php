@@ -7,7 +7,7 @@
                 </a>
                 <form method="post">
                     <?php if ($auth): ?>
-                        <button type="submit" class="btn-delete" aria-label="Close" value="<?= $file; ?>">Удалить</button>
+                        <button type="submit" class="btn-delete" value="<?= $file; ?>">Удалить</button>
                     <?php endif; ?>   
                 </form>
             </div>

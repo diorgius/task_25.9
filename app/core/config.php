@@ -2,7 +2,7 @@
 
     namespace App\core;
 
-    define('URL', 'http://' . $_SERVER['HTTP_HOST'] . DIRECTORY_SEPARATOR);
+    define('URL', 'http://' . $_SERVER['HTTP_HOST'] . '/');
     // define('URL', $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . DIRECTORY_SEPARATOR);
     define('ROOT', dirname(__DIR__, 2) . DIRECTORY_SEPARATOR);
     define('APP', ROOT . 'app' . DIRECTORY_SEPARATOR);

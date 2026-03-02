@@ -14,7 +14,7 @@
             $actionName = 'index';
             $data= [];          
             $routes = explode('/', $_SERVER['REQUEST_URI']);
-
+            
             if (!empty($routes[1])) {
                 $controllerClassName = $routes[1];
             }

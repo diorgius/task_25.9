@@ -18,7 +18,7 @@ body {
 .main {
     width: 59.9%;
     background-color: #ffffff;
-    border: .02rem solid #cccccc;
+    border: .1rem solid #cccccc;
     min-height: 100%;
     flex-grow: 1;
 }
