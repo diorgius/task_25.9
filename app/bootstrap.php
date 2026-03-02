@@ -1,7 +1,6 @@
 <?php
 
 namespace App;
-
 use App\core\Route;
 
 require_once 'core' . DIRECTORY_SEPARATOR . 'config.php';

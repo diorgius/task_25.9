@@ -30,7 +30,6 @@
             $controllerName = CONTROLLERS_NAMESPACE . 'Controller_' . ucfirst($controllerClassName);
             $controllerFile = 'Controller_' . ucfirst($controllerClassName) . '.php';
             $controllerPath = CONTROLLER . $controllerFile;
-            $modelName = 'Model_' . ucfirst(strtolower($controllerClassName));
 
             if(file_exists($controllerPath)) {
                 include_once $controllerPath;

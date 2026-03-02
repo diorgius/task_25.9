@@ -4,7 +4,7 @@
 
 <div class="div-main-show-container">
     <div class="div-show-picture">
-        <img src="<?= UPLOAD . $imageFileName ?>" class="img-full" alt="<?= $imageFileName ?>">
+        <img src="<?= URL . 'uploads/'. $imageFileName ?>" class="img-full" alt="<?= $imageFileName ?>">
     </div>
 
     <div class="div-show-comment">
