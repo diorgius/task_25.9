@@ -17,12 +17,15 @@
             <p class="comment-no">Пока нет ни одного комментария</p>
         <?php endif; ?>
     </div>
-
-    <div class="div-add-comment">
-        <form method="post">
-            <label class="comment-title" for="comment">Ваш комментарий</label>
-            <textarea class="comment-textarea" id="comment" name="comment" rows="4" required></textarea>
-            <button type="submit" class="btn-send">Отправить</button>
-        </form>
-    </div>
+    
+    <?php if ($auth): ?>
+        <div class="div-add-comment">
+            <form method="post">
+                <label class="comment-title" for="comment">Ваш комментарий</label>
+                <textarea class="comment-textarea" id="comment" name="comment" rows="4" required></textarea>
+                <button type="submit" class="btn-send">Отправить</button>
+            </form>
+        </div>
+    <?php endif; ?>
+    
 </div>

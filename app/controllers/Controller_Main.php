@@ -8,14 +8,9 @@
 
     class Controller_Main extends Controller 
     { 
-
-        function __construct() {
+        public function index() { 
             $this->model = new Model_Main();
-            $this->view = new View();
-        }
-
-        function index() { 
-            $data = $this->model->get_data();
+            $data = $this->model->getData();
             $this->view->generate('view_showlist.php', 'view_template.php', $data); 
         } 
     }

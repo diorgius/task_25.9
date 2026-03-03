@@ -6,7 +6,7 @@
 
     class Controller_404 extends Controller 
     { 
-        function index() { 
+        public function index() { 
             $this->view->generate('view_404.php', 'view_template.php'); 
         } 
     }

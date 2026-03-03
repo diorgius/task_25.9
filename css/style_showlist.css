@@ -35,6 +35,7 @@
     font-size: .8rem;
     color: #ffffff;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .btn-delete:hover {

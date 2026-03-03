@@ -9,6 +9,7 @@
     font-size: .8rem;
     color: #ffffff;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .btn-upload {
@@ -68,6 +69,7 @@
     font-size: .8rem;
     color: #ffffff;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .btn-load:hover {

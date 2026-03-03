@@ -1,8 +1,10 @@
 <?php
     session_start();
     $auth = $_SESSION['auth'] ?? null;
+    $login = $_SESSION['login'] ?? null;
     require_once CORE .'config.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +22,7 @@
             <?php if (!$auth): ?>
                 <button class="btn-login" onclick="location.href='/login'">Вход</button>
             <?php else: ?>
-                    <button class="btn-login" onclick="location.href='/logout'">Вход</button>
+                <button class="btn-login" onclick="location.href='/login/signout'">Выход</button>
             <?php endif; ?>   
         </div>
     </header>
