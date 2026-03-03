@@ -5,6 +5,7 @@
     use App\core\Model;
     use App\models\Model_Login;
     use App\core\View;
+
     class Controller_Login extends Controller 
     { 
         public function index() { 
@@ -15,12 +16,26 @@
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {  
                 $credentials = $_POST;
                 $this->model = new Model_Login();
-                $this->model->login($credentials);
+                $user = $this->model->login($credentials);
+                if($user){
+                    session_start();
+                    $_SESSION['auth'] = true;
+                    $_SESSION['login'] = $user['login'];
+                    header('location: /');
+                } else {
+                    header('location: /login');    
+                }          
             }    
         }
 
         public function signout() {
-            $this->model = new Model_Login();
-            $this->model->logout();
+            session_start();
+            unset($_SESSION['auth']);
+            unset($_SESSION['login']);
+            session_destroy();
+            header('location: /');
+
+            // $this->model = new Model_Login();
+            // $this->model->logout();
         }
     }

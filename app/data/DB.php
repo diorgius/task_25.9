@@ -54,14 +54,14 @@
             return;
         }
 
-        function getUserByProp(string $value, string $table, string $prop){
+        function getUserByProp(string $value, string $prop, string $table){
             $stmt = $this->pdo->prepare("SELECT * FROM $table WHERE $prop = :value");
             $stmt->bindParam(':value', $value);
             $stmt->execute(); 
             return $result = $stmt->fetch(PDO::FETCH_ASSOC);
         }
         
-        public function getUserParam(array $credentials, string $table) {
+        public function getUser(array $credentials, string $table) {
             $login = $credentials['login'];
             $password = $credentials['password'];
             $stmt = $this->pdo->prepare("SELECT * FROM $table WHERE login = :login and password = :password");
