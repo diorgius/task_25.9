@@ -22,8 +22,12 @@
                     $_SESSION['auth'] = true;
                     $_SESSION['login'] = $user['login'];
                     header('location: /');
+                    exit();
                 } else {
-                    header('location: /login');    
+                    $data = 'badlogin';
+                    $this->view->generate('view_login.php', 'view_template.php', $data); 
+                    // header('location: /login');
+                    // exit();    
                 }          
             }    
         }
@@ -34,8 +38,6 @@
             unset($_SESSION['login']);
             session_destroy();
             header('location: /');
-
-            // $this->model = new Model_Login();
-            // $this->model->logout();
+            exit();
         }
     }

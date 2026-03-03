@@ -50,21 +50,13 @@
     background-color: #2b8ef8;
 }
 
-.div-wrap {
+.div-alert {
     display: flex;
     align-items: center;
     height: 5rem;
 }
 
-.div-auth-error {
+.div-alert > p {
     font-size: 1.3rem;
-    color: red;
-}
-
-.div-wrap-input {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 1rem;
+    color: #ff0000;
 }

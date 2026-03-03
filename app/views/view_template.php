@@ -34,10 +34,6 @@
                 <button class="btn-upload" onclick="location.href='/upload'">Загрузить изображения</button>
             <?php endif; ?>   
         </section>
-        
-        <section class="section-show-alert">
-
-        </section>
 
         <section class="section-main">
             <?php require_once VIEW . $view_content; ?>

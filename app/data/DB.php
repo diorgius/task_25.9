@@ -48,13 +48,13 @@
             $login = $credentials['login'];
             $password = password_hash($credentials['password'], PASSWORD_DEFAULT);
             $stmt = $this->pdo->prepare("INSERT INTO $table (login,password) values (:login,:password)");
-            $stmt->bindParam(':login', $login);
-            $stmt->bindParam(':password', $password);
-            $stmt->execute();
+            // $stmt->bindParam(':login', $login);
+            // $stmt->bindParam(':password', $password);
+            $stmt->execute([':login' => $login, ':password' => $password]);
             return;
         }
 
-        function getUserByProp(string $value, string $prop, string $table){
+        function getUserProp(string $value, string $prop, string $table){
             $stmt = $this->pdo->prepare("SELECT * FROM $table WHERE $prop = :value");
             $stmt->bindParam(':value', $value);
             $stmt->execute(); 
