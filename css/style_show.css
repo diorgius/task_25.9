@@ -9,6 +9,8 @@
 }
 .div-show-picture {
     width: 95%;
+    display: flex;
+    justify-content: center;
 }
 
 .img-full {

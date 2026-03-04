@@ -16,5 +16,5 @@
     define('CSS', ROOT . 'css' . DIRECTORY_SEPARATOR);
     define('JS', ROOT . 'js' . DIRECTORY_SEPARATOR);
     define('UPLOAD_MAX_SIZE', 1000000); // 1mb
-    define('ALLOWED_TYPES', ['image/jpeg', 'image/png', 'image/gif']);
+    define('ALLOWED_TYPES', ['image/jpeg', 'image/png', 'image/gif', 'image/avif', 'image/webp']);
 

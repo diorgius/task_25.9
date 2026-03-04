@@ -16,6 +16,8 @@
         <?php endforeach; ?>
 
     <?php else: ?>
-        <div class="div-alert">Нет загруженных изображений</div>
+        <div class="div-alert">
+            <p>Нет загруженных изображений</p>
+        </div>
     <?php endif; ?>
 </div>

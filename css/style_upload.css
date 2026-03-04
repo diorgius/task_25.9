@@ -1,24 +1,15 @@
-
-.btn-upload {
-    height: 3rem;
-    width: 15rem;
-    margin: .2rem;
-    background-color: #007bff;
-    border: none;
-    /* border-radius: .25rem; */
-    font-size: .8rem;
-    color: #ffffff;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-
-.btn-upload {
-    background-color: #2b8ef8;
+.div-main-upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40vh;
 }
 
 .form-load-picture {
     margin: 1rem;
-    width: 50%;
+    width: 80%;
     padding: 2rem 3rem;
     border: .1rem solid #cccccc;
 }
