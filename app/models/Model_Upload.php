@@ -16,7 +16,7 @@
             
             if(!empty($files)) {
 
-                if(count($files['files']['name']) >= 20) {
+                if(count($files['files']['name']) > 20) {
                     $result [] = "Выбрано больше 20 файлов";
                     return $result;
                 }
