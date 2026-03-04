@@ -25,11 +25,11 @@
 
 .btn-login {
     height: 2rem;
-    width: 6rem;
+    width: 8rem;
     background-color: #007bff;
     border: .2rem solid #ffffff;
     /* border-radius: .25rem; */
-    font-size: 1rem;
+    font-size: .8rem;
     color: #ffffff;
     text-transform: uppercase;
     cursor: pointer;

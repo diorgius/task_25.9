@@ -34,7 +34,7 @@
             if(file_exists($controllerPath)) {
                 include_once $controllerPath;
             } else {
-                // Route::ErrorPage404();
+                Route::ErrorPage404();
             }
             
             $controller = new $controllerName();
@@ -42,7 +42,7 @@
             if(method_exists($controller, $actionName)) {
                 $controller->$actionName($data);
             } else {
-                // Route::ErrorPage404();
+                Route::ErrorPage404();
             }
         }
 

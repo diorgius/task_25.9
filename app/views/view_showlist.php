@@ -1,5 +1,7 @@
 <div class=div-main-list-container>
+
     <?php if (!empty($data)): ?>
+        
         <?php foreach ($data as $file): ?>
             <div class="div-picture-container">
                 <a href="/show/display/<?= $file; ?>" title="Просмотр полного изображения">
@@ -12,6 +14,7 @@
                 </form>
             </div>
         <?php endforeach; ?>
+
     <?php else: ?>
         <div class="div-alert">Нет загруженных изображений</div>
     <?php endif; ?>

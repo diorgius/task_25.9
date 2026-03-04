@@ -1,6 +1,7 @@
 <?php
     session_start();
     $auth = $_SESSION['auth'] ?? null;
+    $userId = $_SESSION['userId'] ?? null;
     $login = $_SESSION['login'] ?? null;
     require_once CORE .'config.php';
 ?>
@@ -21,6 +22,7 @@
         <div class="div-header-btn-login">
             <?php if (!$auth): ?>
                 <button class="btn-login" onclick="location.href='/login'">Вход</button>
+                <button class="btn-login" onclick="location.href='/registration'">Регистрация</button>
             <?php else: ?>
                 <button class="btn-login" onclick="location.href='/login/signout'">Выход</button>
             <?php endif; ?>   

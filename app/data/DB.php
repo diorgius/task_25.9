@@ -4,13 +4,14 @@
     use PDO;
 
     try {
-        $pdo = new PDO('sqlite:' . DATA . 'db.sql');
+        $pdo = new PDO('sqlite:' . DATA . 'db.sqlite');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $sql = 
         "create table if not exists users (
         id integer primary key autoincrement,
         login varchar(64) not null,
+        email varchar(128) not null,
         password varchar(128) not null,
         created datetime default current_timestamp)";
 
@@ -38,7 +39,7 @@
 
         public function __construct() {  
             try {  
-                $this->pdo = new PDO('sqlite:' . DATA . 'db.sql');
+                $this->pdo = new PDO('sqlite:' . DATA . 'db.sqlite');
             } catch (PDOException $e) {  
                 throw new PDOException($e->getMessage(), (int)$e->getCode());
             }  
@@ -46,31 +47,21 @@
         
         public function createUser(array $credentials, string $table) {
             $login = $credentials['login'];
+            $email = $credentials['email'];
             $password = password_hash($credentials['password'], PASSWORD_DEFAULT);
-            $stmt = $this->pdo->prepare("INSERT INTO $table (login,password) values (:login,:password)");
-            // $stmt->bindParam(':login', $login);
-            // $stmt->bindParam(':password', $password);
-            $stmt->execute([':login' => $login, ':password' => $password]);
+            $stmt = $this->pdo->prepare("INSERT INTO $table (login,email,password) values (:login,:email,:password)");
+            $stmt->execute([':login' => $login, 
+                            ':email' => $email, 
+                            ':password' => $password]);
             return;
         }
 
         function getUserProp(string $value, string $prop, string $table){
-            $stmt = $this->pdo->prepare("SELECT * FROM $table WHERE $prop = :value");
-            $stmt->bindParam(':value', $value);
-            $stmt->execute(); 
+            $stmt = $this->pdo->prepare("SELECT id,login,password FROM $table WHERE $prop = :value");
+            $stmt->execute([':value' => $value]); 
             return $result = $stmt->fetch(PDO::FETCH_ASSOC);
         }
         
-        public function getUser(array $credentials, string $table) {
-            $login = $credentials['login'];
-            $password = $credentials['password'];
-            $stmt = $this->pdo->prepare("SELECT * FROM $table WHERE login = :login and password = :password");
-            $stmt->bindParam(':login', $login);
-            $stmt->bindParam(':password', $password);
-            $stmt->execute();
-            return $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        }
-
         public function getAll(string $table) {
             $stmt = $this->pdo->query("SELECT * FROM $table");
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
