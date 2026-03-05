@@ -7,7 +7,7 @@
 
     class Model_Upload extends Model
     {
-    	public function loading($files) {	
+    	public function loading(array $files) {	
 
             $fileExist = new Model_Main();
             $fileExist = $fileExist->getData();

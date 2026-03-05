@@ -7,7 +7,7 @@
 
     class Model_Delete extends Model
     {
-    	public function delete($fileName) {	
+    	public function delete(string $fileName) {	
             $filePath = UPLOAD . $fileName;
 
             if(file_exists($filePath)) {

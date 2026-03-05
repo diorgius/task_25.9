@@ -56,10 +56,27 @@
             return;
         }
 
+        public function createComment(array $commentData, string $table) {
+            $userId = $commentData['userId'];
+            $picture = $commentData['picture'];
+            $comment = $commentData['comment'];
+            $stmt = $this->pdo->prepare("INSERT INTO $table (user_id,picture,comment) values (:userId,:picture,:comment)");
+            $stmt->execute([':userId' => $userId, 
+                            ':picture' => $picture, 
+                            ':comment' => $comment]);
+            return;
+        }
+
         function getUserProp(string $value, string $prop, string $table){
             $stmt = $this->pdo->prepare("SELECT id,login,password FROM $table WHERE $prop = :value");
             $stmt->execute([':value' => $value]); 
             return $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+        
+        function getCommentProp(string $value, string $prop, string $table){
+            $stmt = $this->pdo->prepare("SELECT c.*,u.login FROM $table as c LEFT JOIN users as u on c.user_id = u.id WHERE $prop = :value");
+            $stmt->execute([':value' => $value]); 
+            return $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
         
         public function getAll(string $table) {

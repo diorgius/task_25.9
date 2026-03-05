@@ -6,7 +6,7 @@
 
     class Model_Registration extends Model
     {
-        public function registration($credentials) {
+        public function registration(array $credentials) {
             $login = trim($credentials['login']);
             $email = trim($credentials['email']);
             $password = trim($credentials['password']);
@@ -40,8 +40,7 @@
                 $user = (new DB())->createUser($credentials, 'users');
                 $credentials = ['login' => $login, 
                                 'password' => $password];
-                $login = new Model_Login();
-                $result = $login->login($credentials);
+                $result = (new Model_Login())->login($credentials);
                 return $result;
             } else {
                return $result;

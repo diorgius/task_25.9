@@ -22,7 +22,7 @@
     height: auto;
 }
 
-.div-show-comment {
+.div-comment-container {
     width: 95%;
     border: .1rem solid #cccccc;
     /* border-radius: .25rem; */
@@ -32,13 +32,51 @@
 .comment-title {
     font-size: 1.2rem;
     font-weight: 500;
-    padding-left: .5rem;
+    padding: 0 0 .7rem .7rem;
+
+}
+
+.div-show-comment {
+    margin: auto;
+    width: 97%;
+    border: .1rem solid #cccccc;
+    margin-bottom: 1rem;
+}
+
+.comment-header {
+    font-size: .9rem;
+    font-weight: 500;
+    padding: .5rem;
+    color: #007bff;
+    /* text-decoration: underline; */
+}
+
+.btn-delete-comment {
+    height: 1.3rem;
+    width: 4rem;
+    background-color: #007bff;
+    border: none;
+    /* border-radius: .25rem; */
+    font-size: .7rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn-delete-comment:hover {
+    background-color: #2b8ef8;
+}
+
+.line-comment {
+    width: 30%;
+    margin: .3rem;
 }
 
 .comment-text {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 500;
     padding: .5rem;
+    color: #555555;
 }
 
 .comment-no {
@@ -52,21 +90,25 @@
     width: 95%;
     border: .1rem solid #cccccc;
     /* border-radius: .25rem; */
-    padding: 1rem 0 1rem 1rem;
+    padding: 1rem 0 1rem 0;
 }
 
 .comment-textarea {
-    width: 98%;
+    margin: .6rem 0 0 .7rem;
+    width: 97%;
     font-size: 1rem;
     color: #495057;
+    padding: .4rem;
     border: .1rem solid #cccccc;
     /* border-radius: .25rem; */
+    resize: none;
+    outline: none;
 }
 
 .btn-send {
     height: 2.5rem;
     width: 8rem;
-    margin: .2rem;
+    margin: .2rem .2rem .2rem .7rem;
     background-color: #007bff;
     border: none;
     /* border-radius: .25rem; */

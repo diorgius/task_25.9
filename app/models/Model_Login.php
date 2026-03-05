@@ -6,7 +6,7 @@
 
     class Model_Login extends Model
     {
-        public function login($credentials) {
+        public function login(array $credentials) {
             $login = $credentials['login'];
             $password = $credentials['password'];
             $user = (new DB())->getUserProp($login, 'login', 'users');

@@ -8,10 +8,6 @@
 
     class Controller_Delete extends Controller 
     { 
-        public function index() { 
-            $this->view->generate('view_showlist.php', 'view_template.php'); 
-        } 
-
         public function deleteFile() {
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $fileName = $_POST['file'];
