@@ -7,7 +7,9 @@
     use App\core\View;
 
     class Controller_Registration extends Controller 
-    { 
+    {
+        protected $model;
+         
         public function index() { 
             $this->view->generate('view_registration.php', 'view_template.php'); 
         }

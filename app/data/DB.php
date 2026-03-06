@@ -36,6 +36,7 @@
 
     class DB
     {
+        protected $pdo;
 
         public function __construct() {  
             try {  

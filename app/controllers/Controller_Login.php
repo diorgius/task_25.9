@@ -8,6 +8,8 @@
 
     class Controller_Login extends Controller 
     { 
+        protected $model;
+
         public function index() { 
             $this->view->generate('view_login.php', 'view_template.php'); 
         }

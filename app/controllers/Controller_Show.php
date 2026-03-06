@@ -8,6 +8,8 @@
 
     class Controller_Show extends Controller 
     {
+        protected $model;
+        
         public function display(array $data) {
             $file = $data[0];
             $this->model = new Model_Show();

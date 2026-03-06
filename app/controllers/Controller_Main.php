@@ -7,7 +7,9 @@
     use App\core\View;
 
     class Controller_Main extends Controller 
-    { 
+    {
+        protected $model;
+         
         public function index() { 
             $this->model = new Model_Main();
             $data = $this->model->getFiles();

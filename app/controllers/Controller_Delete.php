@@ -7,7 +7,9 @@
     use App\core\View;
 
     class Controller_Delete extends Controller 
-    { 
+    {
+        protected $model;
+
         public function deleteFile() {
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $file = $_POST['file'];
