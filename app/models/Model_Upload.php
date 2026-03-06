@@ -10,7 +10,7 @@
     	public function loading(array $files) {	
 
             $fileExist = new Model_Main();
-            $fileExist = $fileExist->getData();
+            $fileExist = $fileExist->getFiles();
 
             $result = [];
             
@@ -23,27 +23,27 @@
 
                 for($i = 0; $i < count($files['files']['name']); $i++) {
 
-                    $fileName = $files['files']['name'][$i];
+                    $file = $files['files']['name'][$i];
 
-                    if(array_search($fileName, $fileExist)) {
-                        $result [] = "Файл с именем . $fileName . существует";
+                    if(array_search($file, $fileExist)) {
+                        $result [] = "Файл с именем . $file . существует";
                         continue;
                     }
 
                     if($files['files']['size'][$i] > UPLOAD_MAX_SIZE) {
-                        $result [] = 'Недопустимый размер файла ' . $fileName;
+                        $result [] = 'Недопустимый размер файла ' . $file;
                         continue;
                     }
 
                     if(!in_array($files['files']['type'][$i], ALLOWED_TYPES)) {
-                        $result [] = 'Недопустимый формат файла ' . $fileName;
+                        $result [] = 'Недопустимый формат файла ' . $file;
                         continue;
                     }
 
-                    $filePath = UPLOAD . basename($fileName);
+                    $filePath = UPLOAD . basename($file);
 
                     if(!move_uploaded_file($files['files']['tmp_name'][$i], $filePath)) {
-                        $result [] = 'Ошибка загрузки файла ' . $fileName;
+                        $result [] = 'Ошибка загрузки файла ' . $file;
                         continue;
                     } 
                 }

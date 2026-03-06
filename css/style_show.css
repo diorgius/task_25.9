@@ -41,6 +41,7 @@
     width: 97%;
     border: .1rem solid #cccccc;
     margin-bottom: 1rem;
+    padding-top: .3rem;
 }
 
 .comment-header {
@@ -68,8 +69,11 @@
 }
 
 .line-comment {
-    width: 30%;
+    width: 40%;
+    height: .05rem;
+    border: none;
     margin: .3rem;
+    background-color: #cccccc;
 }
 
 .comment-text {

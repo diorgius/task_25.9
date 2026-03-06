@@ -30,7 +30,7 @@
                 $result [] = "Пароли не совпадают";
             }
 
-            $user = (new DB())->getUserProp($login, 'login', 'users');
+            $user = (new DB())->getUserByProp($login, 'login', 'users');
             
             if($user) {
                 $result [] = "Такой пользователь уже существует";
@@ -40,8 +40,7 @@
                 $user = (new DB())->createUser($credentials, 'users');
                 $credentials = ['login' => $login, 
                                 'password' => $password];
-                $result = (new Model_Login())->login($credentials);
-                return $result;
+                return $result = (new Model_Login())->login($credentials);
             } else {
                return $result;
             }       

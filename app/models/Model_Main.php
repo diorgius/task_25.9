@@ -7,7 +7,7 @@
 
     class Model_Main extends Model
     {
-    	public function getData() {	
+    	public function getFiles() {	
             $files = scandir(UPLOAD);
             $files = array_filter($files, function ($file) {
                 return !in_array($file, ['.', '..']);

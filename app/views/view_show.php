@@ -22,8 +22,10 @@
                     ?>
                     <span class="comment-header"><?= $date->format('H:i:s d.m.Y'); ?></span>
                     <?php if($comments[$i]['user_id'] == $userId): ?>
-                        <button class="btn-delete-comment">Удалить</button>
-                    <?php endif;; ?>    
+                        <button class="btn-delete-comment" 
+                                onclick="location.href='/delete/deleteComment/<?= $file . '/' .$comments[$i]['id'] ?>'">
+                                Удалить</button>
+                    <?php endif;; ?>
                     <hr class="line-comment">
                     <p class="comment-text"><?= $comments[$i]['comment']; ?></p>                       
                 </div>

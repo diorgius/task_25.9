@@ -11,7 +11,7 @@
         "create table if not exists users (
         id integer primary key autoincrement,
         login varchar(64) not null,
-        email varchar(128) not null,
+        email varchar(64) not null,
         password varchar(128) not null,
         created datetime default current_timestamp)";
 
@@ -21,9 +21,9 @@
         "create table if not exists comments (
         id integer primary key autoincrement,
         user_id integer,
-        picture varchar(64) not null,
+        file varchar(128) not null,
         created datetime default current_timestamp,
-        comment varchar(1024) not null,
+        comment varchar(512) not null,
         foreign key (user_id) references users (id))";
 
     $pdo->exec($sql);
@@ -53,32 +53,38 @@
             $stmt->execute([':login' => $login, 
                             ':email' => $email, 
                             ':password' => $password]);
-            return;
+            return true;
         }
 
         public function createComment(array $commentData, string $table) {
             $userId = $commentData['userId'];
-            $picture = $commentData['picture'];
+            $picture = $commentData['file'];
             $comment = $commentData['comment'];
-            $stmt = $this->pdo->prepare("INSERT INTO $table (user_id,picture,comment) values (:userId,:picture,:comment)");
+            $stmt = $this->pdo->prepare("INSERT INTO $table (user_id,file,comment) values (:userId,:file,:comment)");
             $stmt->execute([':userId' => $userId, 
-                            ':picture' => $picture, 
+                            ':file' => $picture, 
                             ':comment' => $comment]);
-            return;
+            return true;
         }
 
-        function getUserProp(string $value, string $prop, string $table){
+        function getUserByProp(string $value, string $prop, string $table){
             $stmt = $this->pdo->prepare("SELECT id,login,password FROM $table WHERE $prop = :value");
             $stmt->execute([':value' => $value]); 
             return $result = $stmt->fetch(PDO::FETCH_ASSOC);
         }
         
-        function getCommentProp(string $value, string $prop, string $table){
+        function getCommentByProp(string $value, string $prop, string $table){
             $stmt = $this->pdo->prepare("SELECT c.*,u.login FROM $table as c LEFT JOIN users as u on c.user_id = u.id WHERE $prop = :value");
             $stmt->execute([':value' => $value]); 
             return $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
-        
+
+        public function deleteByProp(string $value, string $prop, string $table) {
+            $stmt = $this->pdo->prepare("DELETE FROM $table WHERE $prop = :value");
+            $stmt->execute([':value' => $value]); 
+            return true;
+        }        
+
         public function getAll(string $table) {
             $stmt = $this->pdo->query("SELECT * FROM $table");
             return $stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -10,7 +10,7 @@
     { 
         public function index() { 
             $this->model = new Model_Main();
-            $data = $this->model->getData();
+            $data = $this->model->getFiles();
             $this->view->generate('view_showlist.php', 'view_template.php', $data); 
         } 
     }

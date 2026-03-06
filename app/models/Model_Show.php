@@ -11,6 +11,6 @@
         }
 
         public function showComment(string $picture) {
-            return $result = (new DB())->getCommentProp($picture, 'picture', 'comments');
+            return $result = (new DB())->getCommentByProp($picture, 'file', 'comments');
         }
     }

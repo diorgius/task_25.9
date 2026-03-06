@@ -9,7 +9,7 @@
         public function login(array $credentials) {
             $login = $credentials['login'];
             $password = $credentials['password'];
-            $user = (new DB())->getUserProp($login, 'login', 'users');
+            $user = (new DB())->getUserByProp($login, 'login', 'users');
             if($user) {
                 if(password_verify($password, $user['password'])) {
                     return $user;
